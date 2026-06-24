@@ -1,0 +1,21 @@
+import HeroSection from "./heroSection";
+import ProofSection from "./proofSection";
+import ProofSection2 from "./proofSection2";
+import ServicesSection from "./servicesSection";
+import TestimonialSection from "./testimonialSection";
+import UnconventionalPath from "./unconventionalPath";
+
+const Main = () => {
+  return (
+    <main>
+      <HeroSection />
+      <ProofSection />
+      <ServicesSection />
+      <UnconventionalPath />
+      <TestimonialSection />
+      <ProofSection2 />
+    </main>
+  );
+};
+
+export default Main;
