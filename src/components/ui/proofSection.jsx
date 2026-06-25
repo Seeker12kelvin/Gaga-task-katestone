@@ -33,7 +33,7 @@ const ProofSection = () => {
     <section className="bg-[#FFAC1C] h-299.75 max-[800px]:px-6.5 px-13 flex justify-center items-center">
       <div
         style={{ backgroundImage: `url(${backgrounPic})` }}
-        className="max-[800px]:p-6.5 p-13 h-250 w-full rounded-[40px] bg-cover flex flex-col justify-between border"
+        className="max-[800px]:p-6.5 p-13 h-250 w-full rounded-[40px] bg-cover flex flex-col justify-between"
       >
         <div className="flex gap-3 items-center py-4.5 px-6 max-w-84.75 w-full bg-[#21140136] backdrop-blur-xs rounded-[9999px]">
           <img
@@ -47,7 +47,7 @@ const ProofSection = () => {
         </div>
         <ul
           ref={listLoopRef}
-          className="flex justify-between gap-5 text-white overflow-hidden border"
+          className="flex justify-between gap-5 text-white overflow-hidden"
         >
           {lists.map((data, index) => (
             <li
