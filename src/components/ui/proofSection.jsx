@@ -1,8 +1,8 @@
+import gsap from "gsap";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import avatars from "../../assets/images/proofAvatars.png";
 import backgrounPic from "../../assets/images/proofBackgroundImage.png";
-import { useRef } from "react";
-import gsap from "gsap";
 
 const ProofSection = () => {
   const lists = [

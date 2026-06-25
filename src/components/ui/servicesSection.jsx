@@ -1,9 +1,9 @@
+import { GoArrowRight } from "react-icons/go";
 import servicesPic1 from "../../assets/images/servicesPic1.png";
 import servicesPic2 from "../../assets/images/servicesPic2.png";
 import servicesPic3 from "../../assets/images/servicesPic3.png";
 import servicesPic4 from "../../assets/images/servicesPic4.png";
 import servicesPic5 from "../../assets/images/servicesPic5.png";
-import { GoArrowRight } from "react-icons/go";
 
 const ServicesSection = () => {
   const blockLinks = [

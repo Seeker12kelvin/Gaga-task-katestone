@@ -1,4 +1,3 @@
-import React from "react";
 import unconventionalPic1 from "../../assets/images/unconventionalPic1.png";
 
 const UnconventionalPath = () => {
