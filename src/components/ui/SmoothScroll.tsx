@@ -1,0 +1,28 @@
+import { JSX } from "react";
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+
+function SmoothScroll({ children }: { children: JSX.Element }): JSX.Element {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 0.7,
+      smoothWheel: true,
+      wheelMultiplier: 0.45,
+    });
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  return children;
+}
+
+export default SmoothScroll;
