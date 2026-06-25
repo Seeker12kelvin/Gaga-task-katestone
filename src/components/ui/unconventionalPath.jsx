@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import unconventionalPic1 from "../../assets/images/unconventionalPic1.png";
-const IMAGE_URLS = [unconventionalPic1];
 
 const UnconventionalPath = () => {
   const boxContents = [
@@ -20,28 +18,6 @@ const UnconventionalPath = () => {
       desc: "Admissions readers aren't counting volunteer hours or tracking titles earned. They're asking: what changed because this student showed up? Your application must answer that question with evidence.",
     },
   ];
-
-  const [assetsLoaded, setAssetsLoaded] = useState(false);
-
-  useEffect(() => {
-    const loadImage = (url) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = url;
-        img.onload = resolve; // Triggers when the image binary is fully cached
-        img.onerror = reject;
-      });
-    };
-
-    // Wait for every single image promise to resolve
-    Promise.all(IMAGE_URLS.map(loadImage))
-      .then(() => setAssetsLoaded(true))
-      .catch((err) => console.error("Failed to load assets", err));
-  }, []);
-
-  if (!assetsLoaded) {
-    return <div className="splash-screen">Downloading visual assets...</div>;
-  }
 
   return (
     <section

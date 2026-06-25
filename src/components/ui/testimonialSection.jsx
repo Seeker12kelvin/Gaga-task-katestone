@@ -1,4 +1,3 @@
-import React from "react";
 import testimonialPic1 from "../../assets/images/testimonialPic1.png";
 import testimonialPic2 from "../../assets/images/testimonialPic2.png";
 import testimonialPic3 from "../../assets/images/testimonialPic3.png";
