@@ -1,6 +1,30 @@
+import { useState, useEffect } from "react";
 import heroSectionBackground from "../../assets/images/heroBackgroundImage.png";
+const IMAGE_URLS = [heroSectionBackground];
 
 const HeroSection = () => {
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadImage = (url) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = resolve; // Triggers when the image binary is fully cached
+        img.onerror = reject;
+      });
+    };
+
+    // Wait for every single image promise to resolve
+    Promise.all(IMAGE_URLS.map(loadImage))
+      .then(() => setAssetsLoaded(true))
+      .catch((err) => console.error("Failed to load assets", err));
+  }, []);
+
+  if (!assetsLoaded) {
+    return <div className="splash-screen">Downloading visual assets...</div>;
+  }
+
   return (
     <section
       id="hero"

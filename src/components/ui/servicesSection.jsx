@@ -1,9 +1,17 @@
+import { useState, useEffect } from "react";
 import { GoArrowRight } from "react-icons/go";
 import servicesPic1 from "../../assets/images/servicesPic1.png";
 import servicesPic2 from "../../assets/images/servicesPic2.png";
 import servicesPic3 from "../../assets/images/servicesPic3.png";
 import servicesPic4 from "../../assets/images/servicesPic4.png";
 import servicesPic5 from "../../assets/images/servicesPic5.png";
+const IMAGE_URLS = [
+  servicesPic1,
+  servicesPic2,
+  servicesPic3,
+  servicesPic4,
+  servicesPic5,
+];
 
 const ServicesSection = () => {
   const blockLinks = [
@@ -33,6 +41,28 @@ const ServicesSection = () => {
       desc: "We guide student-athletes through exposure to college-level opportunities across D1, D2, and D3 programs — from positioning to commitment.",
     },
   ];
+
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadImage = (url) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = resolve; // Triggers when the image binary is fully cached
+        img.onerror = reject;
+      });
+    };
+
+    // Wait for every single image promise to resolve
+    Promise.all(IMAGE_URLS.map(loadImage))
+      .then(() => setAssetsLoaded(true))
+      .catch((err) => console.error("Failed to load assets", err));
+  }, []);
+
+  if (!assetsLoaded) {
+    return <div className="splash-screen">Downloading visual assets...</div>;
+  }
 
   return (
     <section

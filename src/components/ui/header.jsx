@@ -1,8 +1,8 @@
 import Logo from "./logo";
+import MenuBtn from "./menuBtn";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useActiveSection } from "../../hooks/useScrollView";
-import MenuBtn from "./menuBtn";
 
 const Header = () => {
   const list = [

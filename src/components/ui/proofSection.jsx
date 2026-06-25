@@ -1,8 +1,10 @@
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
+import { useState, useEffect } from "react";
 import avatars from "../../assets/images/proofAvatars.png";
 import backgrounPic from "../../assets/images/proofBackgroundImage.png";
+const IMAGE_URLS = [backgrounPic];
 
 const ProofSection = () => {
   const lists = [
@@ -28,6 +30,28 @@ const ProofSection = () => {
   //     },
   //   });
   // });
+
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadImage = (url) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = resolve; // Triggers when the image binary is fully cached
+        img.onerror = reject;
+      });
+    };
+
+    // Wait for every single image promise to resolve
+    Promise.all(IMAGE_URLS.map(loadImage))
+      .then(() => setAssetsLoaded(true))
+      .catch((err) => console.error("Failed to load assets", err));
+  }, []);
+
+  if (!assetsLoaded) {
+    return <div className="splash-screen">Downloading visual assets...</div>;
+  }
 
   return (
     <section className="bg-[#FFAC1C] h-299.75 max-[800px]:px-6.5 px-13 flex justify-center items-center">
