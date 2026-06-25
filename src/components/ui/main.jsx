@@ -11,7 +11,7 @@ import UnconventionalPath from "./unconventionalPath";
 
 const Main = () => {
   return (
-    <main>
+    <main className="w-full h-fit overflow-hidden">
       <HeroSection />
       <ProofSection />
       <ServicesSection />

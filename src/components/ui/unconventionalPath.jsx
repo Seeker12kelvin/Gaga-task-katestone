@@ -21,7 +21,7 @@ const UnconventionalPath = () => {
 
   return (
     <section
-      id="unconventionalPath"
+      id="about"
       className="bg-[#F6F3E7] min-h-[1583px] h-fit py-20 px-13 flex flex-col gap-25"
     >
       <div className="w-full flex flex-col gap-5">

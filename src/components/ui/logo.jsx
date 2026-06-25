@@ -5,7 +5,7 @@ const Logo = () => {
     <img
       src={kateStonePrepLogo}
       alt="The Kate Stone Prep logo"
-      className="h-9 object-cover"
+      className="max-h-9 h-fit object-cover"
     />
   );
 };

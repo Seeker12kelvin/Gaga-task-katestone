@@ -2,7 +2,6 @@ import Logo from "./logo";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useActiveSection } from "../../hooks/useScrollView";
-import SignUpSection from "./signUpSection";
 
 const Header = () => {
   const list = [
@@ -20,16 +19,16 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between fixed top-10 mx-auto left-0 right-0 z-999 inset-y-0 h-23 bg-[#21140136] backdrop-blur-xs rounded-[9999px] px-13 max-w-334 w-full">
+    <header className="flex items-center justify-between fixed top-10 mx-auto max-[481px]:left-2 max-[481px]:right-2 max-[966px]:left-5 max-[966px]:right-5 left-13 right-13 z-999 inset-y-0 h-23 bg-[#21140136] backdrop-blur-xs rounded-[9999px] px-13">
       <Logo />
 
-      <nav className="w-fit">
-        <ul className="flex gap-22">
+      <nav className="w-fit max-[966px]:hidden">
+        <ul className="flex max-[1149px]:gap-10 max-[1003px]:gap-8 min-[1149px]:gap-15 xl:gap-22">
           {list.map((data) => (
             <li key={data.id}>
               <a
                 onClick={() => handleScroll(data.href)}
-                className={`${activeSection === data.id ? "text-[#FFAC1C]" : "text-white"} font-geist font-medium leading-6 flex gap-2 items-center cursor-pointer`}
+                className={`${activeSection === data.id ? "text-[#FFAC1C]" : "text-white"} max-[1149px]:text-sm font-geist font-medium leading-6 flex gap-2 items-center cursor-pointer`}
               >
                 {data.name}
                 {data.icon && <span>{data.icon}</span>}
@@ -41,7 +40,7 @@ const Header = () => {
 
       <a
         onClick={() => handleScroll("signUp")}
-        className={`${activeSection === "signUp" ? "text-[#FFAC1C]" : "text-white"} font-geist font-medium leading-6 flex gap-2 items-center cursor-pointer`}
+        className={`${activeSection === "signUp" ? "text-[#FFAC1C]" : "text-white"} max-[1149px]:text-sm font-geist font-medium leading-6 flex gap-2 items-center cursor-pointer max-[467px]:hidden`}
       >
         Contact us{" "}
         <span>

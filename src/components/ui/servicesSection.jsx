@@ -59,7 +59,7 @@ const ServicesSection = () => {
             <div
               key={data.id}
               style={{ backgroundImage: `url(${data.img})` }}
-              className={`w-1/2 min-w-100 h-150 bg-cover bg-no-repeat pt-7.5 pb-8 px-10 flex flex-col justify-between border-[white] border-[0.5px] ${data.id === 1 || data.id === 3 ? " border-l-0" : data.id === 2 || data.id === 4 ? "border-r-0 " : ""}`}
+              className={`max-[882px]:w-full min-[882px]:w-1/2 min-w-110 h-150 bg-cover bg-no-repeat pt-7.5 pb-8 px-10 flex flex-col justify-between border-[white] border-[0.5px] ${data.id === 1 || data.id === 3 ? "min-[882px]:border-l-0 max-[882px]:border-b" : data.id === 2 || data.id === 4 ? "min-[882px]:border-r-0 max-[882px]:border-b" : ""}`}
             >
               {data.grade && (
                 <div className="bg-[#21140136] backdrop-blur-xs rounded-[9999px] w-fit py-1.25 px-4 border-[0.5px] border-[#FFFFFF33]">
@@ -81,7 +81,7 @@ const ServicesSection = () => {
                 </div>
 
                 {data.grade && (
-                  <div className="-mt-5 flex size-17 justify-center items-center bg-[#21140140] backdrop-blur-xs rounded-full border-[0.5px] border-[#FFFFFF33] text-white">
+                  <div className="-mt-5 flex p-5.5 justify-center items-center bg-[#21140140] backdrop-blur-xs rounded-full border-[0.5px] border-[#FFFFFF33] text-white">
                     <GoArrowRight size={24} />
                   </div>
                 )}
