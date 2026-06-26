@@ -53,7 +53,7 @@ const Familytestimonial = () => {
   return (
     <section
       id="family-testimonial"
-      className="min-h-310.5 h-fit w-full py-20 flex flex-col justify-between bg-[#FFFDFA]"
+      className="scroll-mt-32 min-h-310.5 h-fit w-full py-20 flex flex-col justify-between bg-[#FFFDFA]"
     >
       <div className="w-full flex flex-col gap-5 px-13">
         <div className="border-[#E8E8E8] border p-3 flex items-center gap-1.5 w-fit rounded-4xl">

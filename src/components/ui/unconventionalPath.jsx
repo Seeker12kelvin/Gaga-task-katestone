@@ -20,10 +20,7 @@ const UnconventionalPath = () => {
   ];
 
   return (
-    <section
-      id="about"
-      className="bg-[#F6F3E7] min-h-[1583px] h-fit py-20 px-13 flex flex-col gap-25"
-    >
+    <section className="scroll-mt-32 bg-[#F6F3E7] min-h-[1583px] h-fit py-20 px-13 flex flex-col gap-25">
       <div className="w-full flex flex-col gap-5">
         <div className="border-[#E8E8E8] border p-3 flex items-center gap-1.5 w-fit rounded-4xl">
           <div className="rounded-[9999px] bg-[#FFAC1C] size-1.5"></div>

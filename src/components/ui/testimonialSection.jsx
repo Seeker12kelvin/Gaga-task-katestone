@@ -30,7 +30,7 @@ const TestimonialSection = () => {
   return (
     <section
       id="testimonials"
-      className="bg-[#FFFDFA] w-full min-h-[1583px] h-fit py-30 pl-13 flex flex-col gap-25"
+      className="scroll-mt-32 bg-[#FFFDFA] w-full min-h-[1583px] h-fit py-30 pl-13 flex flex-col gap-25"
     >
       <div className="w-full flex flex-col gap-5">
         <div className="border-[#E8E8E8] border p-3 flex items-center gap-1.5 w-fit rounded-4xl">

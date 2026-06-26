@@ -27,7 +27,7 @@ const NewsSection = () => {
   return (
     <section
       id="news"
-      className="min-h-278.25 h-fit px-13 py-20 flex flex-col justify-between"
+      className="scroll-mt-32 min-h-278.25 h-fit px-13 py-20 flex flex-col justify-between"
     >
       <div className="flex justify-between items-end w-full h-fit">
         <div className="w-fit flex flex-col gap-5">

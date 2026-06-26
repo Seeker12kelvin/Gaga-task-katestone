@@ -5,7 +5,7 @@ const ProofSection2 = () => {
   return (
     <section
       id="proof2"
-      className="bg-[#F6F3E7] min-h-310.5 h-fit w-full px-13 py-20 flex flex-col justify-between"
+      className="scroll-mt-32 bg-[#F6F3E7] min-h-310.5 h-fit w-full px-13 py-20 flex flex-col justify-between"
     >
       <div className="w-full flex flex-col gap-5">
         <div className="border-[#FFAC1C] border p-3 flex items-center gap-1.5 w-fit rounded-4xl">

@@ -37,7 +37,7 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="min-h-[2444px] h-fit flex flex-col justify-end"
+      className="scroll-mt-32 min-h-[2444px] h-fit flex flex-col justify-end"
     >
       <div className="flex flex-col gap-25">
         <div className="w-full px-13 flex flex-col gap-5">

@@ -5,7 +5,7 @@ const SignUpSection = () => {
     <section
       id="signUp"
       style={{ backgroundImage: `url(${signUpSectionPic1})` }}
-      className="min-h-190 h-fit bg-cover bg-no-repeat p-13 flex items-end"
+      className="scroll-mt-32 min-h-190 h-fit bg-cover bg-no-repeat p-13 flex items-end"
     >
       <div className="text-white flex flex-col gap-14">
         <h2 className="text-[88px] font-quattrocento leading-20.5 tracking-[-5%] font-normal max-w-175.75 w-full">

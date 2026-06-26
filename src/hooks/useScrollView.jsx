@@ -1,34 +1,44 @@
 import { useEffect, useState } from "react";
 
-export function useActiveSection(sectionIds) {
-  const [activeId, setActiveId] = useState("");
+export function useActiveSection(sections) {
+  const [active, setActive] = useState("");
 
   useEffect(() => {
-    const observers = [];
+    const updateActive = () => {
+      const viewportCenter = window.innerHeight / 2;
 
-    const handleIntersect = (entries) => {
-      entries.forEach((entry) => {
-        // If the section occupies at least 50% of the viewport
-        if (entry.isIntersecting) {
-          setActiveId(entry.target.id);
+      let closest = "";
+      let smallestDistance = Infinity;
+
+      sections.forEach(({ href }) => {
+        const el = document.getElementById(href);
+
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closest = href;
         }
       });
+
+      setActive(closest);
     };
 
-    const observer = new IntersectionObserver(handleIntersect, {
-      rootMargin: "0% 0px 0% 0px", // Creates a detection "sweet spot" in upper-middle screen
-      threshold: 0.1,
-    });
+    updateActive();
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id.href);
-      if (el) {
-        observer.observe(el);
-      }
-    });
+    window.addEventListener("scroll", updateActive);
+    window.addEventListener("resize", updateActive);
 
-    return () => observer.disconnect();
-  }, [sectionIds]);
+    return () => {
+      window.removeEventListener("scroll", updateActive);
+      window.removeEventListener("resize", updateActive);
+    };
+  }, [sections]);
 
-  return activeId;
+  return active;
 }

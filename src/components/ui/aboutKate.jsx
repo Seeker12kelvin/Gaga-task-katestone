@@ -2,7 +2,7 @@ import aboutKatePic1 from "../../assets/images/aboutKatePic1.png";
 
 const AboutKate = () => {
   return (
-    <section className="h-287 w-full flex justify-between">
+    <section id="about" className="h-287 w-full flex justify-between">
       <div className="bg-[#FFAC1C] h-full w-full px-13 py-30 flex flex-col justify-between">
         <div className="w-full flex flex-col gap-5">
           <div className="border-[#2F574D] border py-2 px-3 flex items-center gap-1.5 w-fit rounded-4xl">

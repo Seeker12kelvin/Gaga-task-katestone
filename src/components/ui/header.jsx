@@ -16,7 +16,14 @@ const Header = () => {
   const activeSection = useActiveSection(list);
 
   const handleScroll = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const section = document.getElementById(id);
+
+    if (!section) return;
+
+    window.scrollTo({
+      top: section.offsetTop - 120,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -29,7 +36,7 @@ const Header = () => {
             <li key={data.id}>
               <a
                 onClick={() => handleScroll(data.href)}
-                className={`${activeSection === data.id ? "text-[#FFAC1C]" : "text-white"} max-[1149px]:text-sm font-geist font-medium leading-6 flex gap-2 items-center cursor-pointer`}
+                className={`${activeSection == data.href ? "text-[#FFAC1C]" : "text-white"} max-[1149px]:text-sm font-geist font-medium leading-6 flex gap-2 items-center cursor-pointer`}
               >
                 {data.name}
                 {data.icon && <span>{data.icon}</span>}
