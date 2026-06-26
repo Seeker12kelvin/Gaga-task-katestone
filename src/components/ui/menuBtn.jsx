@@ -1,17 +1,17 @@
-// import { useContext } from "react";
-// import { UserContext } from "./user";
+import { useContext } from "react";
+import { UserContext } from "../context/user";
 import { CiMenuBurger } from "react-icons/ci";
 
 const MenuBtn = () => {
-  // const { setMenuBtn } = useContext(UserContext);
+  const { setMenu } = useContext(UserContext);
 
   return (
     <button
       className="min-[966px]:hidden text-white"
-      // onClick={() => {
-      //   setMenuBtn(true);
-      //   console.log(true);
-      // }}
+      onClick={() => {
+        setMenu(true);
+        console.log(true);
+      }}
     >
       <CiMenuBurger size={30} />
     </button>

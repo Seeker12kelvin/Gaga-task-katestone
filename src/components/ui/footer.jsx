@@ -20,19 +20,6 @@ const Footer = () => {
       four: "Academic advancement",
       five: "Career coaching",
     },
-    {
-      id: 3,
-      heading: "CONNECT",
-      one: "Instagram",
-      two: "(203) 714-4435",
-      three: "Book a call",
-    },
-    {
-      id: 4,
-      heading: "LEGAL",
-      one: "Terms of service",
-      two: "Privacy policy",
-    },
   ];
 
   return (
@@ -86,7 +73,7 @@ const Footer = () => {
         </div>
 
         <div className="flex items-end justify-between min-h-41 h-fit">
-          {lists.slice(0, 2).map((data) => (
+          {lists.map((data) => (
             <div
               key={data.id}
               className="flex flex-col gap-5 h-full justify-end"
@@ -97,11 +84,8 @@ const Footer = () => {
 
               <ul className="flex flex-col gap-1 h-full">
                 {[data.one, data.two, data?.three, data?.four, data?.five].map(
-                  (items) => (
-                    <li
-                      key={data.id}
-                      className="text-sm font-geist leading-5.5"
-                    >
+                  (items, index) => (
+                    <li key={index} className="text-sm font-geist leading-5.5">
                       {items}
                     </li>
                   ),

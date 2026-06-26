@@ -14,7 +14,7 @@ const ProofSection2 = () => {
             REAL STUDENT PROFILES
           </p>
         </div>
-        <h2 className="text-[64px] max-w-201 w-full font-quattrocento font-normal leading-18.75 tracking-[-4%] ">
+        <h2 className="max-[416px]:text-4xl max-[486px]:text-[44px] max-[557px]:text-[54px] text-[64px] max-w-201 w-full font-quattrocento font-normal max-[416px]:leading-12 max-[486px]:leading-15 leading-18.75 tracking-[-4%] ">
           Hear Ava's story of how she became a marketing expert at 16
         </h2>
       </div>

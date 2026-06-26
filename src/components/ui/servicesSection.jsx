@@ -54,12 +54,12 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap max-w-screen w-full border min-h-300 h-full">
+        <div className="flex flex-wrap w-full border min-h-300 h-full">
           {blockLinks.map((data) => (
             <div
               key={data.id}
               style={{ backgroundImage: `url(${data.img})` }}
-              className={`max-[882px]:w-full min-[882px]:w-1/2 min-w-110 h-150 bg-cover bg-no-repeat pt-7.5 pb-8 max-[544px]:px-5 px-10 flex flex-col justify-between border-[white] border-[0.5px] ${data.id === 1 || data.id === 3 ? "min-[882px]:border-l-0 max-[882px]:border-b" : data.id === 2 || data.id === 4 ? "min-[882px]:border-r-0 max-[882px]:border-b" : ""}`}
+              className={`max-[882px]:w-full min-[882px]:w-1/2 min-w-110 max-[527px]:h-108 h-150 bg-cover bg-no-repeat pt-7.5 pb-8 max-[544px]:px-5 px-10 flex flex-col justify-between border-[white] border-[0.5px] ${data.id === 1 || data.id === 3 ? "min-[882px]:border-l-0 max-[882px]:border-b" : data.id === 2 || data.id === 4 ? "min-[882px]:border-r-0 max-[882px]:border-b" : ""}`}
             >
               {data.grade && (
                 <div className="bg-[#21140136] backdrop-blur-xs rounded-[9999px] w-fit py-1.25 px-4 border-[0.5px] border-[#FFFFFF33]">
@@ -89,9 +89,9 @@ const ServicesSection = () => {
             </div>
           ))}
 
-          <div className="w-full flex flex-wrap">
-            <div className="bg-[#2F574D] max-w-121 w-full h-190 py-25 px-13 flex flex-col justify-between">
-              <h3 className="font-quattrocento text-[64px] font-normal text-white leading-18.75 tracking-[-4%] max-w-93 w-full">
+          <div className="w-full flex max-[966px]:flex-col">
+            <div className="bg-[#2F574D] min-[966px]:max-w-121 w-full max-[966px]:gap-20 min-[966px]:h-190 max-[527px]:py-15 max-[527px]:px-7 py-25 px-13 flex flex-col justify-between">
+              <h3 className="font-quattrocento max-[527px]:text-[44px] max-[605px]:text-[54px] text-[64px] font-normal text-white max-[527px]:leading-15 leading-18.75 tracking-[-4%] min-[966px]:max-w-93 w-full">
                 "Great applicants are developed, not born."
               </h3>
 
@@ -102,7 +102,7 @@ const ServicesSection = () => {
 
             <div
               style={{ backgroundImage: `url(${servicesPic5})` }}
-              className={`w-full min-w-100 h-190 bg-cover bg-no-repeat flex flex-col justify-between`}
+              className={`w-full min-w-100 max-[527px]:h-108 h-190 bg-cover bg-no-repeat flex flex-col justify-between`}
             >
               {/* <div className="bg-[#21140136] backdrop-blur-xs rounded-[9999px] w-fit py-1.25 px-4 border-[0.5px] border-[#FFFFFF33]">
                 <p className="font-geist text-sm font-medium leading-5.5 text-white">

@@ -11,13 +11,13 @@ const NewsSection = () => {
       header: "APRIL 2, 2026  .  STRATEGY",
     },
     {
-      id: 1,
+      id: 2,
       img: newsSectionPic2,
       bubs: "MARCH 20, 2026  .  IMPACT",
       header: "Our annual idea building picnic",
     },
     {
-      id: 1,
+      id: 3,
       img: newsSectionPic3,
       bubs: "You don’t need 20 activities anymore",
       header: "Passion projects are now taking over",

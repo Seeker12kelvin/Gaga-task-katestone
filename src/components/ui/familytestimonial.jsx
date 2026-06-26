@@ -87,7 +87,7 @@ const Familytestimonial = () => {
 
         <div className="w-full no-scrollbar">
           <div ref={boxRef} className="flex gap-5 w-max">
-            {blocks.map((data) => (
+            {/* {blocks.map((data) => (
               <div
                 key={data.id}
                 className={`max-w-249.25 w-full max-h-144 h-full flex justify-between transition-transform duration-300 ${increment === data.id ? "scale-100" : "scale-100"}`}
@@ -120,7 +120,7 @@ const Familytestimonial = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>

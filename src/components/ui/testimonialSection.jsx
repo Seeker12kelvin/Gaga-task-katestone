@@ -30,14 +30,14 @@ const TestimonialSection = () => {
   return (
     <section
       id="testimonials"
-      className="scroll-mt-32 bg-[#FFFDFA] w-full min-h-[1583px] h-fit py-30 pl-13 flex flex-col gap-25"
+      className="scroll-mt-32 bg-[#FFFDFA] w-full min-h-[1583px] h-fit py-30 max-xl:px-6 xl:pl-13 flex flex-col gap-25"
     >
       <div className="w-full flex flex-col gap-5">
         <div className="border-[#E8E8E8] border p-3 flex items-center gap-1.5 w-fit rounded-4xl">
           <div className="rounded-[9999px] bg-[#FFAC1C] size-1.5"></div>
           <p className="text-xs font-geist font-medium">OUR METHODLOGY</p>
         </div>
-        <h2 className="text-[64px] max-w-180 font-quattrocento font-normal leading-18.75 tracking-[-4%] ">
+        <h2 className="max-[416px]:text-4xl max-[486px]:text-[44px] max-[557px]:text-[54px] text-[64px] max-w-180 font-quattrocento font-normal max-[416px]:leading-12 max-[486px]:leading-15 leading-18.75 tracking-[-4%] ">
           Three pillars. One unforgettable candidate.
         </h2>
         <p className="text-sm text-[#505258] max-w-108 w-full font-geist font-normal leading-5.5">
@@ -46,13 +46,13 @@ const TestimonialSection = () => {
         </p>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col max-xl:gap-15">
         {content.map((data) => (
           <div
             key={data.id}
-            className="flex flex-wrap justify-between items-center border-[#E8E8E8] border-b"
+            className="flex max-xl:flex-wrap max-xl:gap-5 justify-between items-center border-[#E8E8E8] border-b max-xl:pb-5"
           >
-            <div className="flex flex-col gap-13">
+            <div className="flex flex-col max-xl:gap-6 gap-13">
               <div className="border-[#F64921] border-[0.5px] px-3 flex items-center gap-1.5 w-fit h-7 rounded-4xl">
                 <div className="rounded-[9999px] bg-[#F64921] size-1.5"></div>
                 <p className="text-xs font-geist font-medium text-[#F64921]">
@@ -64,15 +64,15 @@ const TestimonialSection = () => {
                 {data.header}
               </h3>
 
-              <p className="text-[#505258] text-sm font-geist leading-5.5 font-normal tracking-[0%] max-w-107 w-full">
+              <p className="text-[#505258] text-sm font-geist leading-5.5 font-normal tracking-[0%] xl:max-w-107 w-full">
                 {data.desc}
               </p>
             </div>
-            {/* <img
+            <img
               src={data.img}
               alt={`A picture showcasing ${data.header}`}
-              className="max-h-257 h-full max-w-205.75 object-cover"
-            /> */}
+              className="max-xl:max-h-108 xl:max-h-257 h-full max-xl:max-w-full max-w-205.75 w-full object-cover max-xl:rounded-3xl"
+            />
           </div>
         ))}
       </div>
