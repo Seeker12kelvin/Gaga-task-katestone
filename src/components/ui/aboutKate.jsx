@@ -4,9 +4,9 @@ const AboutKate = () => {
   return (
     <section
       id="about"
-      className="min-h-287 h-fit w-full flex flex-wrap justify-between"
+      className="max-[732px]:h-fit max-[1280px]:h-200 h-full xl:h-287 w-full flex max-[732px]:flex-col justify-between"
     >
-      <div className="bg-[#FFAC1C] h-full w-full px-13 py-30 flex flex-col justify-between">
+      <div className="bg-[#FFAC1C] h-full max-[732px]:w-full max-[940px]:w-1/2 w-full max-[1021px]:px-8 px-13 py-30 flex flex-col max-[940px]:gap-10 justify-between">
         <div className="w-full flex flex-col gap-5">
           <div className="border-[#2F574D] border py-2 px-3 flex items-center gap-1.5 w-fit rounded-4xl">
             <div className="rounded-[9999px] bg-[#2F574D] size-1.5"></div>
@@ -14,7 +14,7 @@ const AboutKate = () => {
               MEET KATE STONE
             </p>
           </div>
-          <h2 className="text-[64px] text-[#211401] max-w-110 font-quattrocento font-normal leading-18.75 tracking-[-4%] ">
+          <h2 className="max-[527px]:text-[44px] max-[981px]:text-[44px] max-[1117px]:text-[50px] min-[1117px]:text-[64px] text-[#211401] max-w-110 font-quattrocento font-normal max-[1117px]:leading-15 leading-18.75 tracking-[-4%] ">
             The most authentic voice in college admissions
           </h2>
           <p className="text-sm text-[#211401] max-w-md w-full font-geist font-normal leading-6">
@@ -38,7 +38,7 @@ const AboutKate = () => {
       <img
         src={aboutKatePic1}
         alt="A picture of Kate Stone"
-        className="max-w-205.75 h-287 w-full object-cover"
+        className="min-[940px]:max-w-205.75 max-[732px]:w-full max-[940px]:w-1/2 h-full w-full object-cover"
       />
     </section>
   );

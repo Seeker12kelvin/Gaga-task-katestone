@@ -1,18 +1,19 @@
+import gsap from "gsap";
+import { useRef, useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import familyTestimonialPic1 from "../../assets/images/familyTestimonialPic1.png";
 import familyTestimonialPic2 from "../../assets/images/familyTestimonialPic2.png";
-import gsap from "gsap";
-import { useRef, useState } from "react";
 
 const Familytestimonial = () => {
-  const [increment, setIncrement] = useState(1);
-  const boxRef = useRef(null);
-  const blocks = [
+  const sliderRef = useRef(null);
+  const [current, setCurrent] = useState(0);
+
+  const testimonials = [
     {
       id: 1,
       img: familyTestimonialPic1,
       quote:
-        "“Dear Kate — I just wanted to send a sincere thank you from the bottom of my heart for helping me get into Stanford.”",
+        "Dear Kate — I just wanted to send a sincere thank you from the bottom of my heart for helping me get into Stanford.",
       owner: "Tannen H.",
       role: "STUDENT",
       bg: "#FB6B1D",
@@ -21,107 +22,111 @@ const Familytestimonial = () => {
       id: 2,
       img: familyTestimonialPic2,
       quote:
-        "“You helped my daughter get into Harvard. She's feeling so much more confident and grounded. I can finally sleep again. Thank you!”",
+        "You helped my daughter get into Harvard. She's feeling so much more confident and grounded. I can finally sleep again. Thank you!",
       owner: "Sudha A.",
       role: "PARENT",
       bg: "#2F574D",
     },
   ];
 
-  const handleNextAnim = () => {
-    if (increment >= blocks.length - 1) return;
-
-    gsap.to(boxRef.current, {
-      x: (increment + 1) * -997,
-      duration: 0.3,
+  const slideTo = (index) => {
+    gsap.to(sliderRef.current, {
+      xPercent: -(index * 100),
+      duration: 0.5,
+      ease: "power3.out",
     });
 
-    setIncrement((prev) => prev + 1);
+    setCurrent(index);
   };
 
-  const handlePrevAnim = () => {
-    if (increment === 0) return;
+  const nextSlide = () => {
+    if (current < testimonials.length - 1) {
+      slideTo(current + 1);
+    }
+  };
 
-    gsap.to(boxRef.current, {
-      x: (increment - 1) * -997,
-      duration: 0.3,
-    });
-
-    setIncrement((prev) => prev - 1);
+  const prevSlide = () => {
+    if (current > 0) {
+      slideTo(current - 1);
+    }
   };
 
   return (
     <section
       id="family-testimonial"
-      className="scroll-mt-32 min-h-310.5 h-fit w-full py-20 flex flex-col justify-between bg-[#FFFDFA]"
+      className="bg-[#FFFDFA] py-20 lg:py-32 scroll-mt-32 overflow-hidden"
     >
-      <div className="w-full flex flex-col gap-5 px-13">
-        <div className="border-[#E8E8E8] border p-3 flex items-center gap-1.5 w-fit rounded-4xl">
-          <div className="rounded-[9999px] bg-[#FFAC1C] size-1.5"></div>
-          <p className="text-xs font-geist font-medium">TESTIMONIALS</p>
+      {/* Heading */}
+      <div className="max-w-7xl mx-auto px-5 lg:px-12">
+        <div className="inline-flex items-center gap-2 border border-[#E8E8E8] rounded-full px-4 py-2">
+          <div className="w-2 h-2 rounded-full bg-[#FFAC1C]" />
+          <span className="text-xs font-geist font-medium">TESTIMONIALS</span>
         </div>
-        <h2 className="text-[64px] max-w-140 font-quattrocento font-normal leading-18.75 tracking-[-4%] ">
+
+        <h2 className="mt-6 max-w-3xl text-5xl md:text-6xl font-quattrocento leading-tight">
           Families who trusted the process.
         </h2>
-        <p className="text-sm text-[#505258] max-w-108 w-full font-geist font-normal leading-5.5">
+
+        <p className="mt-5 max-w-xl text-[#505258] font-geist">
           A focused framework designed to turn strong applicants into standout
           admits.
         </p>
       </div>
 
-      <div className="w-full h-fit flex flex-col gap-10">
-        <div className="self-end flex gap-5 items-center px-13">
-          <button
-            onClick={() => handlePrevAnim()}
-            className="flex size-17 justify-center items-center bg-[#F6F3E7] rounded-full text-[#505258]"
-          >
-            <GoArrowLeft size={24} />
-          </button>
-          <button
-            onClick={() => handleNextAnim()}
-            className="flex size-17 justify-center items-center bg-[#FFAC1C] rounded-full text-white"
-          >
-            <GoArrowRight size={24} />
-          </button>
-        </div>
+      {/* Buttons */}
+      <div className="max-w-7xl mx-auto flex justify-end gap-4 px-5 lg:px-12 mt-12 mb-10">
+        <button
+          onClick={prevSlide}
+          disabled={current === 0}
+          className="w-16 h-16 rounded-full bg-[#F6F3E7] flex items-center justify-center disabled:opacity-40 transition"
+        >
+          <GoArrowLeft size={24} />
+        </button>
 
-        <div className="w-full no-scrollbar">
-          <div ref={boxRef} className="flex gap-5 w-max">
-            {/* {blocks.map((data) => (
-              <div
-                key={data.id}
-                className={`max-w-249.25 w-full max-h-144 h-full flex justify-between transition-transform duration-300 ${increment === data.id ? "scale-100" : "scale-100"}`}
-              >
+        <button
+          onClick={nextSlide}
+          disabled={current === testimonials.length - 1}
+          className="w-16 h-16 rounded-full bg-[#FFAC1C] text-white flex items-center justify-center disabled:opacity-40 transition"
+        >
+          <GoArrowRight size={24} />
+        </button>
+      </div>
+
+      {/* Slider */}
+      <div className="overflow-hidden">
+        <div ref={sliderRef} className="flex">
+          {testimonials.map((item) => (
+            <div key={item.id} className="min-w-full px-5 lg:px-12">
+              <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+                {/* Image */}
                 <img
-                  src={data.img}
-                  alt={`A picture of on of our ${data.role}`}
-                  className="max-w-113 w-full object-cover rounded-[40px]"
+                  src={item.img}
+                  alt={item.owner}
+                  className="w-full lg:w-[42%] h-[350px] md:h-[450px] lg:h-[580px] rounded-[40px] object-cover"
                 />
 
+                {/* Text Card */}
                 <div
-                  style={{ background: data.bg }}
-                  className="max-w-136.25 w-full min-h-144 rounded-[40px] flex flex-col justify-between p-13 text-white"
+                  style={{ backgroundColor: item.bg }}
+                  className="flex-1 rounded-[40px] p-8 lg:p-12 text-white flex flex-col justify-between"
                 >
-                  <p className="font-quattrocento text-[88px] tracking-[-5%] leading-20.5 font-normal">
+                  <span className="text-6xl lg:text-[88px] leading-none font-quattrocento">
                     “
-                  </p>
+                  </span>
 
-                  <h3 className="text-2xl font-quattrocento font-normal leading-8.5 tracking-[-1%]">
-                    {data.quote}
+                  <h3 className="text-xl md:text-2xl lg:text-3xl leading-relaxed font-quattrocento my-8">
+                    {item.quote}
                   </h3>
 
-                  <div className="fkex flex-col gap-3">
-                    <p className="font-geist font-medium leading-6 tracking-[0%]">
-                      {data.owner}
-                    </p>
-                    <p className="text-xs font-geist font-medium leading-4.5 tracking-[0%]">
-                      {data.role}
-                    </p>
+                  <div>
+                    <p className="font-geist font-semibold">{item.owner}</p>
+
+                    <p className="text-sm mt-2 tracking-wider">{item.role}</p>
                   </div>
                 </div>
               </div>
-            ))} */}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -61,7 +61,7 @@ const MobileMenu = () => {
   return (
     <aside
       ref={asideRef}
-      className="h-dvh min-[481px]:max-w-62.5 fixed right-0 w-full bg-[#21140136] backdrop-blur-xl flex flex-col z-1000 gap-2 p-4 inset-y-0 min-[966px]:hidden"
+      className="h-full min-[481px]:max-w-62.5 fixed right-0 w-full bg-[#21140136] backdrop-blur-xl flex flex-col z-1000 gap-2 p-4 inset-y-0 min-[966px]:hidden"
     >
       <div className="h-fit w-full flex flex-col justify-center">
         <button onClick={() => exitAnimation()} className="p-2 self-center">
@@ -70,7 +70,7 @@ const MobileMenu = () => {
       </div>
 
       <nav className="w-full h-full">
-        <ul className="w-full h-fit flex flex-col gap-6 items-start justify-start text-white">
+        <ul className="w-full h-fit flex flex-col max-sm:items-center gap-6 items-start justify-start text-white">
           {list.map((data) => (
             <a
               key={data.id}

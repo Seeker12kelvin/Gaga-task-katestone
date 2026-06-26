@@ -30,10 +30,10 @@ const ProofSection = () => {
   // });
 
   return (
-    <section className="bg-[#FFAC1C] h-299.75 max-[800px]:px-6.5 px-13 flex justify-center items-center">
+    <section className="bg-[#FFAC1C] max-sm:max-h-fit sm:h-299.75 max-[800px]:p-6.5 px-13 flex justify-center items-center">
       <div
         style={{ backgroundImage: `url(${backgrounPic})` }}
-        className="max-[800px]:p-6.5 p-13 h-250 w-full rounded-[40px] bg-cover flex flex-col justify-between"
+        className="max-[800px]:p-6.5 p-13 max-sm:h-108 sm:h-250 w-full rounded-[40px] bg-cover flex flex-col justify-between"
       >
         <div className="flex gap-3 items-center py-4.5 px-6 max-w-84.75 w-full bg-[#21140136] backdrop-blur-xs rounded-[9999px]">
           <img

@@ -75,7 +75,7 @@ const ServicesSection = () => {
                     {data.header}
                   </h3>
 
-                  <p className="leading-5.5 max-[544px]:text-xs text-sm text-white font-geist font-normal min-w-12.5 max-w-107 w-full">
+                  <p className="leading-5.5 max-[544px]:text-xs text-sm text-white font-geist font-normal max-sm:max-w-90 sm:max-w-107 w-full">
                     {data.desc}
                   </p>
                 </div>

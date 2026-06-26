@@ -8,7 +8,7 @@ const HeroSection = () => {
       className="scroll-mt-32 max-[412px]:h-210 max-[467px]:h-200 max-[540px]:h-200 max-[800px]:h-225 h-230 w-full bg-cover bg-center bg-no-repeat flex items-end max-[800px]:px-6.5 px-13 pb-50"
     >
       <div className="flex flex-col max-[540px]:gap-5 max-[767px]:gap-10 gap-14">
-        <h1 className="max-[467px]:text-[45px] max-[540px]:text-[55px] max-[625px]:text-[65px] max-[767px]:text-[75px] text-[88px] text-white max-w-180 w-full max-[467px]:leading-15.5 leading-20.5 tracking-[-5%] font-quattrocento font-normal">
+        <h1 className="max-[416px]:text-5xl max-[486px]:text-[44px] max-[557px]:text-[54px] max-[625px]:text-[64px] max-[767px]:text-[75px] text-[88px] text-white max-w-180 w-full max-[467px]:leading-15.5 leading-20.5 tracking-[-5%] font-quattrocento font-normal">
           Prepared for College, Career, and Life
         </h1>
 

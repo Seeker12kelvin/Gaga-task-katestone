@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#FFAC1C] p-5 min-h-143 w-full h-fit">
       <div className="rounded-[40px] p-8 bg-[white] h-full flex flex-col gap-13">
-        <div className="flex justify-between">
+        <div className="flex flex-wrap gap-5 justify-between">
           <div className="text-black flex flex-col gap-5">
             <img
               src={footerPic1}
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex items-end justify-between min-h-41 h-fit">
+        <div className="flex flex-wrap gap-6 items-end justify-between min-h-41 h-fit">
           {lists.map((data) => (
             <div
               key={data.id}
