@@ -2,7 +2,10 @@ import aboutKatePic1 from "../../assets/images/aboutKatePic1.png";
 
 const AboutKate = () => {
   return (
-    <section id="about" className="h-287 w-full flex justify-between">
+    <section
+      id="about"
+      className="min-h-287 h-fit w-full flex flex-wrap justify-between"
+    >
       <div className="bg-[#FFAC1C] h-full w-full px-13 py-30 flex flex-col justify-between">
         <div className="w-full flex flex-col gap-5">
           <div className="border-[#2F574D] border py-2 px-3 flex items-center gap-1.5 w-fit rounded-4xl">
@@ -35,7 +38,7 @@ const AboutKate = () => {
       <img
         src={aboutKatePic1}
         alt="A picture of Kate Stone"
-        className="max-w-205.75 max-h-287 h-full w-full object-cover"
+        className="max-w-205.75 h-287 w-full object-cover"
       />
     </section>
   );

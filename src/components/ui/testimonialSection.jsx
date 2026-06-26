@@ -50,7 +50,7 @@ const TestimonialSection = () => {
         {content.map((data) => (
           <div
             key={data.id}
-            className="flex justify-between items-center border-[#E8E8E8] border-b"
+            className="flex flex-wrap justify-between items-center border-[#E8E8E8] border-b"
           >
             <div className="flex flex-col gap-13">
               <div className="border-[#F64921] border-[0.5px] px-3 flex items-center gap-1.5 w-fit h-7 rounded-4xl">
@@ -68,11 +68,11 @@ const TestimonialSection = () => {
                 {data.desc}
               </p>
             </div>
-            <img
+            {/* <img
               src={data.img}
               alt={`A picture showcasing ${data.header}`}
               className="max-h-257 h-full max-w-205.75 object-cover"
-            />
+            /> */}
           </div>
         ))}
       </div>
