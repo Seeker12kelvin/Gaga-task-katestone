@@ -25,20 +25,20 @@ const Footer = () => {
   return (
     <footer className="bg-[#FFAC1C] p-5 min-h-143 w-full h-fit">
       <div className="rounded-[40px] p-8 bg-[white] h-full flex flex-col gap-13">
-        <div className="flex flex-wrap gap-5 justify-between">
+        <div className="flex flex-wrap max-[875px]:flex-col gap-5 justify-between">
           <div className="text-black flex flex-col gap-5">
             <img
               src={footerPic1}
               alt="The Kate Stone Prep logo"
               className="h-9 w-48 object-cover"
             />
-            <p className="max-w-79.75 text-sm leading-5.5 w-full text-[#211401]">
+            <p className="max-[875px]:max-w-full max-w-79.75 text-sm leading-5.5 w-full text-[#211401]">
               We help students build wildly successful lives through community
               impact, demonstrated expertise, and strategic positioning.
             </p>
           </div>
 
-          <div className="bg-[#F6F3E7] min-h-63 h-fit rounded-4xl max-w-108 w-full p-6 flex flex-col justify-between">
+          <div className="bg-[#F6F3E7] min-h-63 h-fit rounded-4xl max-[875px]:max-w-full max-w-108 w-full p-6 flex flex-col justify-between">
             <div className="bg-[#FFFDFA] py-1.75 px-4 rounded-[9999px]">
               <form
                 onSubmit={(e) => e.preventDefault()}
